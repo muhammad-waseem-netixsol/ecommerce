@@ -14,7 +14,7 @@ export default function Products() {
   return (
     <Layout>
       <Link className="btn-primary" href={'/products/new'}>Add new product</Link>
-      <table className="basic mt-2 h-[200vh]">
+      <table className="basic mt-2">
         <thead>
           <tr>
             <td>Product name</td>
