@@ -2,15 +2,16 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import Nav from "@/components/Nav";
 import {useState} from "react";
 import Logo from "@/components/Logo";
+import { FcGoogle } from "react-icons/fc";
 
 export default function Layout({children}) {
   const [showNav,setShowNav] = useState(false);
   const { data: session } = useSession();
   if (!session) {
     return (
-      <div className="bg-bgGray w-screen h-screen flex items-center">
-        <div className="text-center w-full">
-          <button onClick={() => signIn('google')} className="bg-white p-2 px-4 rounded-lg">Login with Google</button>
+      <div className="relative bg-black w-screen h-screen justify-center flex items-center">
+       <div className="text-center w-full z-20 flex items-center gap-2 justify-center">
+          <button onClick={() => signIn('google')} className="bg-white hover:bg-slate-100 cursor-pointer p-2 px-4 rounded-lg flex items-center gap-2 justify-center"><FcGoogle /> Login with Google</button>
         </div>
       </div>
     );
